@@ -1,0 +1,94 @@
+# Portable Hermes profile template for 스빡이.
+# Secrets are intentionally not included. Run `hermes -p sbbagi setup` or
+# `hermes -p sbbagi model` on each new machine to configure credentials.
+
+model:
+  provider: openai-codex
+  base_url: https://chatgpt.com/backend-api/codex
+  default: gpt-5.5
+
+agent:
+  max_turns: 150
+  gateway_timeout: 1800
+  tool_use_enforcement: auto
+  task_completion_guidance: true
+
+display:
+  language: ko
+  final_response_markdown: strip
+  runtime_footer:
+    enabled: false
+  platforms:
+    discord:
+      streaming: false
+
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+  memory_char_limit: 2200
+  user_char_limit: 1375
+
+terminal:
+  backend: local
+  cwd: .
+  timeout: 180
+  persistent_shell: true
+
+web:
+  backend: ddgs
+
+stt:
+  enabled: true
+  provider: local
+  local:
+    model: base
+    language: ''
+
+tts:
+  provider: edge
+
+approvals:
+  mode: manual
+  timeout: 60
+  cron_mode: deny
+
+security:
+  redact_secrets: true
+  tirith_enabled: true
+  tirith_fail_open: true
+
+discord:
+  require_mention: true
+  auto_thread: true
+  thread_require_mention: false
+  history_backfill: true
+  history_backfill_limit: 50
+  reactions: true
+
+cron:
+  wrap_response: true
+
+code_execution:
+  mode: project
+
+platform_toolsets:
+  cli:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - cronjob
+    - delegation
+    - file
+    - image_gen
+    - memory
+    - messaging
+    - session_search
+    - skills
+    - terminal
+    - todo
+    - tts
+    - vision
+    - web
+
+_config_version: 27

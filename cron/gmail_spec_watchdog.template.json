@@ -1,0 +1,10 @@
+{
+  "name": "SPEC Gmail reply watchdog",
+  "schedule": "every 5m",
+  "script": "gmail_spec_watchdog.py",
+  "no_agent": true,
+  "deliver": "origin",
+  "profile": "sbbagi",
+  "repeat": "forever",
+  "description": "Script-only Hermes cron job. Prints nothing unless new incoming Gmail is detected. Create after Gmail OAuth and Discord gateway are configured."
+}

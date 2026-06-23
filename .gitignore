@@ -1,0 +1,21 @@
+# Hermes secrets / local runtime state
+.env
+auth.json
+google_token.json
+google_client_secret.json
+state.db*
+logs/
+sessions/
+cron/output/
+cron/.tick.lock
+state/*.json
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS/editor
+.DS_Store
