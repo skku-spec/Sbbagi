@@ -36,11 +36,12 @@ STATE = STATE_DIR / "gmail_spec_watchdog_state.json"
 # newly-arrived mail after initialization produces an alert.
 # Exclude sent/drafts/trash/spam to avoid alerting on our own outbound mail.
 QUERY = os.environ.get(
-    "SPAKKI_GMAIL_QUERY",
+    "SBBAGI_GMAIL_QUERY",
+    os.environ.get("SPAKKI_GMAIL_QUERY") or
     "in:anywhere newer_than:30d -in:sent -in:drafts -in:trash -in:spam",
 )
-MAX_RESULTS = int(os.environ.get("SPAKKI_GMAIL_MAX_RESULTS", "20"))
-PREVIEW_LIMIT = int(os.environ.get("SPAKKI_GMAIL_PREVIEW_LIMIT", "500"))
+MAX_RESULTS = int(os.environ.get("SBBAGI_GMAIL_MAX_RESULTS") or os.environ.get("SPAKKI_GMAIL_MAX_RESULTS", "20"))
+PREVIEW_LIMIT = int(os.environ.get("SBBAGI_GMAIL_PREVIEW_LIMIT") or os.environ.get("SPAKKI_GMAIL_PREVIEW_LIMIT", "500"))
 
 
 def load_state() -> dict:

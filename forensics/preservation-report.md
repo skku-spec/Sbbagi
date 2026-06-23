@@ -1,4 +1,4 @@
-# Spakki Preservation Report
+# Sbbagi Preservation Report
 
 Date: 2026-06-18
 
@@ -6,7 +6,7 @@ Date: 2026-06-18
 
 - Profile name: `spbaki`
 - Expected profile directory: `/Users/slit/.hermes/profiles/spbaki`
-- Destination repository: `https://github.com/skku-spec/Spakki.git`
+- Destination repository: `https://github.com/skku-spec/Sbbagi.git`
 
 ## What Was Still Present
 

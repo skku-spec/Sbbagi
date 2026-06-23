@@ -30,6 +30,13 @@ chmod 700 "$PROFILE_DIR/scripts/gmail_spec_watchdog.py" 2>/dev/null || true
 
 BIN_DIR="$HOME/.local/bin"
 mkdir -p "$BIN_DIR"
+cat > "$BIN_DIR/sbbagi" <<EOF
+#!/bin/sh
+exec "$HERMES_BIN" -p "$PROFILE_NAME" "\$@"
+EOF
+chmod +x "$BIN_DIR/sbbagi"
+
+# Backward-compatible wrapper for the earlier romanization.
 cat > "$BIN_DIR/spakki" <<EOF
 #!/bin/sh
 exec "$HERMES_BIN" -p "$PROFILE_NAME" "\$@"
@@ -44,7 +51,7 @@ EOF
 chmod +x "$BIN_DIR/spbaki"
 
 echo "Installed 스빡이 profile to: $PROFILE_DIR"
-echo "Wrappers: $BIN_DIR/spakki and $BIN_DIR/spbaki"
+echo "Wrappers: $BIN_DIR/sbbagi, $BIN_DIR/spakki, and $BIN_DIR/spbaki"
 echo
 echo "Next steps on this machine:"
 echo "1) Configure model/OAuth credentials: $HERMES_BIN -p $PROFILE_NAME setup"

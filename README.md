@@ -1,4 +1,4 @@
-# Spakki / 스빡이 Hermes Profile
+# Sbbagi / 스빡이 Hermes Profile
 
 SPEC(성균관대학교 창업동아리, SKKU Prep Entrepreneurs' Club) 운영 보조용 Hermes Agent 프로필을 다른 컴퓨터에서도 재현하기 위한 저장소입니다.
 
@@ -28,8 +28,8 @@ curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
 ### 2. 이 저장소 클론
 
 ```bash
-git clone https://github.com/skku-spec/Spakki.git
-cd Spakki
+git clone https://github.com/skku-spec/Sbbagi.git
+cd Sbbagi
 ```
 
 ### 3. 스빡이 프로필 설치
@@ -43,13 +43,13 @@ bash scripts/install_profile.sh
 다른 프로필명으로 설치하려면:
 
 ```bash
-bash scripts/install_profile.sh spakki
+bash scripts/install_profile.sh sbbagi
 ```
 
-설치되면 `~/.local/bin/spakki` 래퍼가 생성됩니다.
+설치되면 `~/.local/bin/sbbagi` 래퍼가 생성됩니다.
 
 ```bash
-spakki
+sbbagi
 # 또는
 hermes -p sbbagi
 ```
@@ -128,7 +128,7 @@ hermes -p sbbagi cron create 'every 5m' \
 필터를 바꾸고 싶으면 환경변수로 Gmail query를 지정할 수 있습니다.
 
 ```bash
-export SPAKKI_GMAIL_QUERY='in:inbox newer_than:7d -in:spam -in:trash'
+export SBBAGI_GMAIL_QUERY='in:inbox newer_than:7d -in:spam -in:trash'
 ```
 
 ## 절대 커밋하면 안 되는 것
