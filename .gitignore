@@ -14,8 +14,21 @@ state/*.json
 # Python
 __pycache__/
 *.py[cod]
+.pytest_cache/
 .venv/
 venv/
+
+# Hermes skill/runtime metadata
+profiles/*/skills/.archive/
+profiles/*/skills/.curator-backups/
+profiles/*/skills/.curator_backups/
+profiles/*/skills/.hub/
+profiles/*/skills/.usage.json
+profiles/*/skills/.usage.json.lock
+profiles/*/skills/.bundled_manifest
+profiles/*/skills/.curator_state
+profiles/*/models_dev_cache.json
+profiles/*/.skills_prompt_snapshot.json
 
 # OS/editor
 .DS_Store
